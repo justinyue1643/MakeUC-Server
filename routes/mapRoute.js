@@ -16,7 +16,7 @@ router.route("/").get((req, res) => {
 
   axios
     .get(
-      `${BASE_URL}?location=${lat},${lon}&radius=${radius}&type=restaurant&keyword=cruise&key=${API_KEY}`
+      `${BASE_URL}?location=${lat},${lon}&radius=${radius}&type=restaurant&keyword=local&key=${API_KEY}`
     )
     .then((response) => {
       console.log(response.data);
