@@ -1,9 +1,11 @@
 const mongoose = require("mongoose");
 
+var SchemaTypes = mongoose.Schema.Types;
+
 // define schema of data
 const businessSchema = new mongoose.Schema({
-  lat: mongoose.SchemaTypes.Double,
-  lon: mongoose.SchemaTypes.Double,
+  lat: SchemaTypes.Decimal128,
+  lon: SchemaTypes.Decimal128,
   address: String,
   name: String,
   description: String,
