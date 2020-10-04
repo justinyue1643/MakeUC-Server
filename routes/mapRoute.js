@@ -9,6 +9,7 @@ router.route("/").post((req, res) => {
   const lat = req.body.lat;
   const lon = req.body.lon;
   const radius = req.body.radius;
+  const keyword = req.body.keyword;
 
   if (!lat) res.status(404).send("No latitude found.");
   if (!lon) res.status(404).send("No longitude found.");
@@ -16,7 +17,7 @@ router.route("/").post((req, res) => {
 
   axios
     .get(
-      `${BASE_URL}?location=${lat},${lon}&radius=${radius}&keyword=local&key=${API_KEY}`
+      `${BASE_URL}?location=${lat},${lon}&radius=${radius}&keyword=${keyword}&key=${API_KEY}`
     )
     .then((response) => {
       console.log(response.data);
