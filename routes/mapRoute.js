@@ -5,7 +5,7 @@ require("dotenv").config({ path: ".env" });
 API_KEY = 'AIzaSyBk4_I6kJt42OHcxf-uyDlx7LUtQSykvWw';
 BASE_URL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json";
 
-router.route("/").get((req, res) => {
+router.route("/").post((req, res) => {
   const lat = req.body.lat;
   const lon = req.body.lon;
   const radius = req.body.radius;
